@@ -1,0 +1,136 @@
+body {
+  background-color: #1f1f1f;
+}
+section {
+  display: inline-block;
+}
+p {
+  font-family: monospace;
+  margin-left: 20px;
+}
+header {
+  font-family: monospace;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.CV {
+  display: flex;
+  justify-content: center;
+}
+
+.left-side {
+  background-color: rgb(65, 64, 64);
+  width: 270px;
+  color: white;
+  padding-bottom: 15px;
+  border-radius: 10px 0 0 10px;
+}
+
+.right-side {
+  background-color: rgb(44, 42, 42);
+  color: white;
+  vertical-align: top;
+  width: 500px;
+  border-radius: 0 10px 10px 0;
+}
+
+.img1 {
+  margin-top: 100px;
+  width: 40%;
+  border-radius: 50%;
+}
+
+.CV-border {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.CV-border::after {
+  content: "";
+  background-image: conic-gradient(from var(--angle), transparent 70%, blue 30%);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  animation: 3s spin1 linear infinite;
+  filter: blur(10px);
+}
+
+.CV-border::before{
+  content: "";
+  background-image: conic-gradient(from var(--angle), red 30%, transparent 30%);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  animation: 3s spin2 linear infinite;
+  filter: blur(10px);
+}
+
+@keyframes spin1 {
+  from {
+    --angle: 0deg;
+  }
+
+  to {
+    --angle: 360deg;
+  }
+}
+
+@keyframes spin2 {
+  from {
+    --angle: 360deg;
+  }
+
+  to {
+    --angle: 0deg;
+  }
+}
+
+.image {
+  text-align: center;
+}
+
+.name {
+  margin-top: 98px;
+  margin-left: 20px;
+  margin-bottom: 42px;
+  font-family: monospace;
+  font-size: 30px;
+  text-align: center;
+}
+
+.occupation {
+  font-size: 26px;
+  margin-bottom: 40px;
+}
+
+.edu-para {
+  white-space: pre;
+}
+
+pre {
+  margin: 0px;
+  padding: 0px;
+}
+.refrences {
+  margin-bottom: 16px;
+}
